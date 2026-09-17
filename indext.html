@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Add Archivo Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/globe.gl"></script>
+<title>Medical Tech Hero Section</title>
+<style>
+  :root {
+    --primary: #f26522; /* Orange accent color */
+    --bg-dark: #0a0a0a;
+    --text-main: #ffffff;
+    --text-muted: #999999;
+    --border-color: #333333;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    /* Updated Font Family */
+    font-family: 'Archivo', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+  }
+
+  /* --- Navigation --- */
+  .navbar {
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    background: #0005;
+    backdrop-filter: blur(10px);
+  }
+
+  .logo img {
+    max-height: 50px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--text-main);
+  }
+
+  .nav-links a.active {
+    background-color: var(--primary);
+    color: var(--text-main);
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* --- Buttons --- */
+  .btn {
+    padding: 0.6rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .btn-outline {
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    background: transparent;
+  }
+
+  .btn-outline:hover {
+    background: var(--text-main);
+    color: var(--bg-dark);
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+  }
+
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--primary);
+  }
+
+  .cart-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  /* --- Hero Slider Container --- */
+  .hero-container {
+    position: relative;
+    height: 100dvh;
+    min-height: 650px;
+    width: 100%;
+  }
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out;
+    display: flex;
+    padding: 4rem 10%;
+    overflow: hidden;
+    padding-top: 180px;
+  }
+
+  .slide.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* --- Background Media (Video & Images) --- */
+  .bg-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  /* --- Video Overlay --- */
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1; 
+    pointer-events: none; 
+  }
+
+  /* --- Globe Container --- */
+  #globe-container {
+    position: absolute; 
+    top: 50%; 
+    right: 0%; 
+    transform: translateY(-50%);
+    width: 65%; 
+    height: 100%; 
+    z-index: 5; 
+    cursor: grab;
+  }
+
+  #globe-container:active {
+    cursor: grabbing;
+  }
+
+  /* --- Content Layout --- */
+  .content-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    pointer-events: none; 
+  }
+
+  .left-col, .right-col {
+    pointer-events: auto; 
+  }
+
+  .left-col {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+  }
+
+  .left-col h1 {
+    font-size: 5rem;
+    line-height: 1.05;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+  }
+
+  .left-col h1 .highlight {
+    color: var(--primary);
+  }
+
+  /* --- Vertical Tabs --- */
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 220px;
+  }
+
+  .tab-btn {
+    background: #5555;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .tab-btn:is(:hover,:focus, :focus-visible) {
+    border-color: #666;
+    color: #fff;
+    outline: none;
+  }
+
+  .tab-btn.active {
+    color: var(--primary);
+    border-color: var(--text-main);
+  }
+
+  /* --- Right Column Content --- */
+  .right-col {
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .right-col h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  .right-col p {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 1rem;
+  }
+
+  /* --- Custom Text Markers --- */
+  .marker-wrapper {
+    position: relative;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10;
+  }
+
+  /* The glowing dot */
+  .globe-marker {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    /* Centers the dot exactly on the coordinate */
+    position: absolute; 
+    top: -8px; 
+    left: -8px;
+  }
+
+  /* The connecting angled line */
+  .marker-line {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 35px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: rotate(-45deg);
+    transform-origin: left center;
+    transition: background-color 0.3s ease;
+  }
+
+  /* The bordered text box */
+  .marker-label {
+    position: absolute;
+    bottom: 24px; /* Positions it at the end of the line */
+    left: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: var(--text-main);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover effect for the whole group */
+  .marker-wrapper:hover {
+    z-index: 20; /* Brings hovered marker to the front */
+  }
+
+  .marker-wrapper:hover .globe-marker {
+    background-color: var(--primary);
+    box-shadow: 0 0 20px 8px rgba(242, 101, 34, 0.8);
+    transform: scale(1.2);
+  }
+
+  .marker-wrapper:hover .marker-line {
+    background-color: var(--primary); /* Line turns orange */
+  }
+
+  .marker-wrapper:hover .marker-label {
+    border-color: var(--primary); /* Border turns orange */
+    color: var(--primary);
+    background: rgba(10, 10, 10, 0.95);
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/68medical-logo.webp" alt="6:8 Medical Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Press / Media</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#" class="btn btn-outline">Contact Us</a>
+      <div class="cart-icon">🛒</div>
+    </div>
+  </nav>
+
+  <!-- Hero Slider -->
+  <main class="hero-container">
+
+    <!-- Slide 1 (6:8 Medical) -->
+    <div class="slide active" id="slide1">
+      <video class="bg-media" autoplay muted loop playsinline>
+        <source src="assets/advantage-hero.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay"></div>
+      
+      <div class="content-wrapper">
+        <div class="left-col">
+          <h1>TRANSFORMING <br><span class="highlight">TRAUMA</span> <br>CARE</h1>
+          <div class="tabs">
+            <button class="tab-btn active" onclick="switchSlide(1)">6:8 Medical</button>
+            <button class="tab-btn" onclick="switchSlide(2)">Technology</button>
+            <button class="tab-btn" onclick="switchSlide(3)">Global Partners</button>
+          </div>
+        </div>
+        
+        <div class="right-col">
+          <h3>Our Mission: Elevate Survivability</h3>
+          <p>We want to elevate survivability and optimize pre-hospital care. By advancing medical gear with innovation, life-saving solutions, we give responders the tools to make every second count.</p>
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary">Our Story</a>
+            <a href="#" class="btn btn-outline">Shop Products</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 (Technology) -->
+    <div class="slide" id="slide2">
+      <video class="bg-media" autoplay muted loop playsinline>
+        <source src="assets/advantage-hero-2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-overlay"></div>
+      
+      <div class="content-wrapper">
+        <div class="left-col">
+          <h1>EXPERIENCE <br><span class="highlight">-BACKED</span> <br>TECHNOLOGY</h1>
+          <div class="tabs">
+            <button class="tab-btn" onclick="switchSlide(1)">6:8 Medical</button>
+            <button class="tab-btn active" onclick="switchSlide(2)">Technology</button>
+            <button class="tab-btn" onclick="switchSlide(3)">Global Partners</button>
+          </div>
+        </div>
+        
+        <div class="right-col">
+           <h3>Advantage ® Pressure Bar </h3>
+          <p>The Advantage features Popp Point Pressure Device (P3D) patented technology and, fills critical gaps for both medical and non-medical responders. It enhances existing field equipment while providing a more effective bleeding management solution.</p>
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary">Shop Products</a>
+            <a href="#" class="btn btn-outline">How It Works</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 (Global Partners) -->
+    <div class="slide" id="slide3">
+      <div class="video-overlay"></div>
+      
+      <!-- GLOBE CONTAINER -->
+      <div id="globe-container"></div>
+      
+      <div class="content-wrapper">
+        <div class="left-col">
+          <h1>GLOBAL <br><span class="highlight">PARTNERS</span> <br>IN CARE</h1>
+          <div class="tabs">
+            <button class="tab-btn" onclick="switchSlide(1)">6:8 Medical</button>
+            <button class="tab-btn" onclick="switchSlide(2)">Technology</button>
+            <button class="tab-btn active" onclick="switchSlide(3)">Global Partners</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Slider Functionality -->
+  <script>
+    function switchSlide(slideIndex) {
+      const slides = document.querySelectorAll('.slide');
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      document.getElementById('slide' + slideIndex).classList.add('active');
+    }
+
+    // --- Globe Data ---
+    const partnerLocations = [
+      { lat: 39.0, lng: -98.0, name: 'North America HQ' },
+      { lat: 48.8566, lng: 2.3522, name: 'Paris Branch' },
+      { lat: -23.5505, lng: -46.6333, name: 'South America Partner' },
+      { lat: 35.6762, lng: 139.6503, name: 'Tokyo Distribution' },
+      { lat: -33.8688, lng: 151.2093, name: 'Sydney Operations' },
+      { lat: 25.2048, lng: 55.2708, name: 'Dubai Office' }
+    ];
+
+    // --- Initialize Globe ---
+    const world = Globe()
+      (document.getElementById('globe-container'))
+      .backgroundColor('rgba(0,0,0,0)') 
+      .showAtmosphere(true)
+      .atmosphereColor('#ffffff')
+      .atmosphereAltitude(0.15)
+      
+      // --- HTML Markers with Text & Lines ---
+      .htmlElementsData(partnerLocations)
+      .htmlElement(d => {
+        // Create the main wrapper
+        const wrapper = document.createElement('div');
+        wrapper.className = 'marker-wrapper';
+        
+        // Create the dot
+        const dot = document.createElement('div');
+        dot.className = 'globe-marker';
+        
+        // Create the connecting line
+        const line = document.createElement('div');
+        line.className = 'marker-line';
+        
+        // Create the text box
+        const label = document.createElement('div');
+        label.className = 'marker-label';
+        label.innerText = d.name;
+        
+        // Put them all inside the wrapper
+        wrapper.appendChild(dot);
+        wrapper.appendChild(line);
+        wrapper.appendChild(label);
+        
+        // Click event for the entire marker
+        wrapper.onclick = () => {
+          alert(`You clicked on: ${d.name}`);
+        };
+        
+        return wrapper;
+      });
+
+    // --- Fetch Map Data to Create Dotted Hexagons ---
+    fetch('https://raw.githubusercontent.com/vasturiano/globe.gl/master/example/datasets/ne_110m_admin_0_countries.geojson')
+      .then(res => res.json())
+      .then(countries => {
+        world.hexPolygonsData(countries.features)
+          .hexPolygonResolution(3) // Controls how many dots there are (3 or 4 is best)
+          .hexPolygonMargin(0.6)   // High margin shrinks the shapes so they look like floating dots
+          .hexPolygonColor(() => 'rgba(255, 255, 255, 0.7)'); // Color of the dots
+      });
+
+    // --- Styling the 3D space and rotation ---
+    world.pointOfView({ lat: 20, lng: 10, altitude: 1.2 });
+    
+    world.controls().autoRotate = true;
+    world.controls().autoRotateSpeed = 0.5;
+    world.controls().enableZoom = false;
+    world.globeMaterial().transparent = true;
+    world.globeMaterial().opacity = 0.5;
+  </script>
+</body>
+</html>
