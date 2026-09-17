@@ -1,0 +1,6 @@
+# Ignore all video files (since they are on Cloudinary now)
+*.mp4
+*.mov
+
+# Ignore Mac system files (I saw this in your previous screenshot!)
+.DS_Store
