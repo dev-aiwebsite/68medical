@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Add Archivo Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<script src="https://unpkg.com/globe.gl"></script>
 
-<title>Medical Tech Hero Section</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add Archivo Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/globe.gl"></script>
+
+  <title>Medical Tech Hero Section</title>
 </head>
+
 <body>
 
   <!-- Navigation -->
   <nav class="navbar">
-    <!-- Added Container -->
     <div class="container navbar-container">
       <div class="logo">
         <img src="assets/68medical-logo.webp" alt="6:8 Medical Logo">
@@ -38,244 +39,372 @@
   <!-- Hero Slider -->
   <main class="hero-container section-dark">
 
-    <!-- Slide 1 (6:8 Medical) -->
-    <div class="slide active" id="slide1">
-      <video class="bg-media" autoplay muted loop playsinline>
-        <source src="https://res.cloudinary.com/dh7iwoafo/video/upload/q_auto,f_auto/v1789620623/advantage-hero_mc1a3q.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-overlay"></div>
-      
-      <!-- Added Container to Content Wrapper -->
-      <div class="content-wrapper container">
-        <div class="left-col">
-          <h1>TRANSFORMING <br><span class="highlight">TRAUMA</span> <br>CARE</h1>
-          <div class="tabs">
-            <button class="tab-btn active" onclick="switchSlide(1)">6:8 Medical</button>
-            <button class="tab-btn" onclick="switchSlide(2)">Technology</button>
-            <button class="tab-btn" onclick="switchSlide(3)">Global Partners</button>
+    <div class="slide-container">
+      <!-- Slide 1 -->
+      <div class="slide" id="slide1">
+        <video class="bg-media" autoplay muted loop playsinline preload="metadata">
+          <source src="https://res.cloudinary.com/dh7iwoafo/video/upload/v1789620638/advantage-hero-2_t0d7mu.mp4"
+            type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="hero-content container">
+
+          <!-- Heading -->
+          <div class="hero-heading">
+            <h1>
+              PRE-<span class="highlight">HOSPITAL</span><br>
+              EQUIPMENT
+            </h1>
+            <p class="hero-intro">
+              Designed for EMS, emergency responders, rescue teams
+              and healthcare professionals working where
+              <strong>EVERY SECOND MATTERS.</strong>
+            </p>
           </div>
-        </div>
-        
-        <div class="right-col">
-          <h3>Our Mission: Elevate Survivability</h3>
-          <p>We want to elevate survivability and optimize pre-hospital care. By advancing medical gear with innovation, life-saving solutions, we give responders the tools to make every second count.</p>
-          <div class="btn-group">
-            <a href="#" class="btn btn-primary">Our Story</a>
-            <a href="#" class="btn btn-outline">Shop Products</a>
+
+          <!-- Right Content -->
+          <div class="hero-info">
+            <h3>Advantage ® Pressure Bar</h3>
+            <p>
+              The Advantage features Popp Point Pressure Device
+              (P3D) patented technology and, fills critical gaps
+              for both medical and non-medical responders. It
+              enhances existing field equipment while providing
+              a more effective bleeding management solution.
+            </p>
+            <div class="btn-group">
+              <a href="#" class="btn btn-primary">Shop Products</a>
+              <a href="#" class="btn btn-dark-outline">How It Works</a>
+            </div>
           </div>
+
         </div>
       </div>
+
+      <!-- Slide 2 -->
+      <div class="slide" id="slide2">
+        <video class="bg-media" autoplay muted loop playsinline>
+          <source src="https://res.cloudinary.com/dh7iwoafo/video/upload/v1789620623/advantage-hero_mc1a3q.mp4"
+            type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="hero-content container">
+
+          <!-- Heading -->
+          <div class="hero-heading">
+            <h1>
+              TRANSFORMING<br>
+              <span class="highlight">TRAUMA</span><br>
+              CARE
+            </h1>
+            <p class="hero-intro">
+              Designed for EMS, emergency responders, rescue teams
+              and healthcare professionals working where
+              <strong>EVERY SECOND MATTERS.</strong>
+            </p>
+          </div>
+
+          <!-- Right Content -->
+          <div class="hero-info">
+            <h3>Our Mission: Elevate Survivability</h3>
+            <p>
+              We want to elevate survivability and optimize
+              pre-hospital care. By advancing medical gear with
+              innovation and life-saving solutions, we give
+              responders the tools to make every second count.
+            </p>
+            <div class="btn-group">
+              <a href="#" class="btn btn-primary">Our Story</a>
+              <a href="#" class="btn btn-dark-outline">Shop Products</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide" id="slide3">
+        <div class="video-overlay"></div>
+        <div id="globe-container"></div>
+        <div class="hero-content container">
+
+          <div class="hero-heading">
+            <h1>
+              GLOBAL<br>
+              <span class="highlight">PARTNERS</span><br>
+              IN CARE
+            </h1>
+            <p class="hero-intro">
+              Connecting innovative healthcare solutions
+              with responders around the world.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- Slide Navigation -->
+    <div class="hero-navigation">
+      <label>
+        <input tabindex="1" type="radio" name="slide-nav" id="slide1-nav" checked>
+        <p>Technology</p>
+      </label>
+      <label>
+        <input tabindex="2" type="radio" name="slide-nav" id="slide2-nav">
+        <p>6:8 Medical</p>
+      </label>
+      <label>
+        <input tabindex="3" type="radio" name="slide-nav" id="slide3-nav">
+        <p>Global Partners</p> 
+      </label>
     </div>
 
-    <!-- Slide 2 (Technology) -->
-    <div class="slide" id="slide2">
-      <video class="bg-media" autoplay muted loop playsinline>
-        <source src="https://res.cloudinary.com/dh7iwoafo/video/upload/q_auto,f_auto/v1789620638/advantage-hero-2_t0d7mu.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-overlay"></div>
-      
-      <!-- Added Container to Content Wrapper -->
-      <div class="content-wrapper container">
-        <div class="left-col">
-          <h1>EXPERIENCE <br><span class="highlight">-BACKED</span> <br>TECHNOLOGY</h1>
-          <div class="tabs">
-            <button class="tab-btn" onclick="switchSlide(1)">6:8 Medical</button>
-            <button class="tab-btn active" onclick="switchSlide(2)">Technology</button>
-            <button class="tab-btn" onclick="switchSlide(3)">Global Partners</button>
-          </div>
-        </div>
-        
-        <div class="right-col">
-           <h3>Advantage ® Pressure Bar </h3>
-          <p>The Advantage features Popp Point Pressure Device (P3D) patented technology and, fills critical gaps for both medical and non-medical responders. It enhances existing field equipment while providing a more effective bleeding management solution.</p>
-          <div class="btn-group">
-            <a href="#" class="btn btn-primary">Shop Products</a>
-            <a href="#" class="btn btn-outline">How It Works</a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Slide 3 (Global Partners) -->
-    <div class="slide" id="slide3">
-      <div class="video-overlay"></div>
-      
-      <!-- GLOBE CONTAINER -->
-      <div id="globe-container"></div>
-      
-      <!-- Added Container to Content Wrapper -->
-      <div class="content-wrapper container">
-        <div class="left-col">
-          <h1>GLOBAL <br><span class="highlight">PARTNERS</span> <br>IN CARE</h1>
-          <div class="tabs">
-            <button class="tab-btn" onclick="switchSlide(1)">6:8 Medical</button>
-            <button class="tab-btn" onclick="switchSlide(2)">Technology</button>
-            <button class="tab-btn active" onclick="switchSlide(3)">Global Partners</button>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
   </main>
 
+  <!-- Equipment Categories -->
+  <section class="equipment-categories bg-light-alt">
+    <div class="equipment-categories__inner">
+      <div class="equipment-categories__grid">
+
+        <!-- Hemorrhage Control -->
+        <a href="/product-category/hemorrhage-control/" class="equipment-category six8-animate six8-fade-up">
+          <div class="equipment-category__content">
+            <span class="equipment-category__number">01</span>
+            <h3>Hemorrhage<br>Control</h3>
+            <span class="equipment-category__link">
+              Explore Equipment <span>→</span>
+            </span>
+          </div>
+          <div class="equipment-category__image">
+            <img src="https://68medical.com/wp-content/uploads/2026/04/TAK-710-Photo-2.jpg"
+              alt="Hemorrhage control equipment" loading="lazy">
+          </div>
+          <span class="equipment-category__line"></span>
+        </a>
+
+        <!-- Airway -->
+        <a href="/product-category/airway/" class="equipment-category six8-animate six8-fade-up six8-delay-100">
+          <div class="equipment-category__content">
+            <span class="equipment-category__number">02</span>
+            <h3>Airway</h3>
+            <span class="equipment-category__link">
+              Explore Equipment <span>→</span>
+            </span>
+          </div>
+          <div class="equipment-category__image">
+            <img src="https://68medical.com/wp-content/uploads/2026/02/ProCric.jpg" alt="Airway equipment"
+              loading="lazy">
+          </div>
+          <span class="equipment-category__line"></span>
+        </a>
+
+        <!-- Respiration -->
+        <a href="/product-category/respiration/" class="equipment-category six8-animate six8-fade-up six8-delay-200">
+          <div class="equipment-category__content">
+            <span class="equipment-category__number">03</span>
+            <h3>Respiration</h3>
+            <span class="equipment-category__link">
+              Explore Equipment <span>→</span>
+            </span>
+          </div>
+          <div class="equipment-category__image">
+            <img src="https://68medical.com/wp-content/uploads/2023/03/Russell-Chest-Seal.jpeg"
+              alt="Respiration equipment" loading="lazy">
+          </div>
+          <span class="equipment-category__line"></span>
+        </a>
+
+        <!-- Circulation -->
+        <a href="/product-category/circulation/" class="equipment-category six8-animate six8-fade-up six8-delay-300">
+          <div class="equipment-category__content">
+            <span class="equipment-category__number">04</span>
+            <h3>Circulation</h3>
+            <span class="equipment-category__link">
+              Explore Equipment <span>→</span>
+            </span>
+          </div>
+          <div class="equipment-category__image">
+            <img src="https://68medical.com/wp-content/uploads/2026/03/Hemovault-Blood-Transpor-Boxes-700x700.png"
+              alt="Medical Circulation equipment" loading="lazy">
+          </div>
+          <span class="equipment-category__line"></span>
+        </a>
+
+        <!-- Kits & Sets -->
+        <a href="/product-category/kits-sets/" class="equipment-category six8-animate six8-fade-up six8-delay-400">
+          <div class="equipment-category__content">
+            <span class="equipment-category__number">05</span>
+            <h3>Kits &amp; Sets</h3>
+            <span class="equipment-category__link">
+              Explore Equipment <span>→</span>
+            </span>
+          </div>
+          <div class="equipment-category__image">
+            <img src="https://68medical.com/wp-content/uploads/2026/02/IMG_1077-scaled.jpeg" alt="Medical kits and sets"
+              loading="lazy">
+          </div>
+          <span class="equipment-category__line"></span>
+        </a>
+
+        <!-- Rescue Equipment -->
+        <a href="/product-category/rescue-equipment/"
+          class="equipment-category six8-animate six8-fade-up six8-delay-500">
+          <div class="equipment-category__content">
+            <span class="equipment-category__number">06</span>
+            <h3>Rescue<br>Equipment</h3>
+            <span class="equipment-category__link">
+              Explore Equipment <span>→</span>
+            </span>
+          </div>
+          <div class="equipment-category__image">
+            <img src="https://68medical.com/wp-content/uploads/2026/08/First-Responder-Bag-1-700x700.jpg"
+              alt="Rescue equipment" loading="lazy">
+          </div>
+          <span class="equipment-category__line"></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
   <!-- 1. Emergency Section -->
-  <section class="section section-light">
-    <!-- Added Container -->
+  <section class="section section-light-alt">
     <div class="container">
-      <h2 class="section-title">PREVENTABLE DEATH IS THE TRUE <br>TRAUMA EMERGENCY</h2>
-      <p class="section-subtitle">Preventable deaths escalate significantly after 3 minutes. Conventional approaches may be difficult to deploy in the high-stress, time-critical environments where hemorrhage control matters most.</p>
-      
+      <h2 class="section-title six8-animate six8-fade-up">PREVENTABLE DEATH IS THE TRUE <br>TRAUMA EMERGENCY</h2>
+      <p class="section-subtitle six8-animate six8-fade-up six8-delay-100">Preventable deaths escalate significantly
+        after 3 minutes. Conventional approaches may
+        be difficult to deploy in the high-stress, time-critical environments where hemorrhage control matters most.</p>
+
       <div class="emergency-grid">
         <div class="stats-col">
-          <div class="stat-card">
+          <div class="stat-card six8-animate six8-fade-right six8-delay-200">
             <h3 class="text-primary">35%</h3>
             <p>Of Preventable Trauma Deaths</p>
-            <span>are caused by hemorrhage before reaching definitive medical care, primarily from extremity injury.</span>
+            <span>are caused by hemorrhage before reaching definitive medical care, primarily from extremity
+              injury.</span>
           </div>
-          <div class="stat-card">
+          <div class="stat-card six8-animate six8-fade-right six8-delay-300">
             <h3>00:00:01</h3>
             <p>Every Second Matters</p>
-            <span>Rapid, effective bleeding control means the difference between life and death. Single-use, easy application is critical.</span>
+            <span>Rapid, effective bleeding control means the difference between life and death. Single-use, easy
+              application is critical.</span>
           </div>
         </div>
-        <div class="image-col">
-          <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_1000/v1789860581/6b30ae859f73a76641d2353d1ab331c455d9e22c_igcxs7.jpg" alt="Medic treating patient">
+        <div class="image-col six8-animate six8-fade-left six8-delay-200">
+          <img
+            src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_1000/v1789860581/6b30ae859f73a76641d2353d1ab331c455d9e22c_igcxs7.jpg"
+            alt="Medic treating patient">
         </div>
       </div>
     </div>
   </section>
 
   <!-- 2. Product Showcase Card -->
-  <div class="product-showcase-wrapper">
-    <!-- Added Container -->
+  <section class="product-showcase-wrapper">
     <div class="container">
-      <div class="product-card">
+      <div class="product-card six8-animate six8-fade-up">
         <div class="product-card-content">
-          <h2>HEMGUARD 4"<br>Targeted Pressure<br>Bandage</h2>
-          <p>The HEMGUARD Targeted Pressure Bandage (4" x 6") utilizes non-slip highly durable backing material. It delivers focused and pin-point pressure directly to wound site.</p>
+          <h2><span class="text-primary">HEM</span>GUARD 4"<br>Targeted Pressure<br>Bandage</h2>
+          <p>The HEMGUARD® Targeted Pressure Bandage 4” is an advanced hemorrhage control dressing designed to deliver
+            focused compression where traditional bandages often fail.</p>
           <div class="btn-group">
-            <a href="#" class="btn btn-primary">Learn More ></a>
-            <a href="#" class="btn btn-outline-dark">Buy 4 Packs</a>
+            <a href="#" class="btn btn-primary">Learn More</a>
+            <a href="#" class="btn btn-outline-dark">How it works</a>
           </div>
         </div>
         <div class="product-card-image">
-          <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_1000/v1789860580/cadf582a502bc762cf6303932f9d6dc264712057_hdwmcu.png" alt="Hemguard Bandages">
+          <img
+            src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_1000/v1789860580/cadf582a502bc762cf6303932f9d6dc264712057_hdwmcu.png"
+            alt="Hemguard Bandages">
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 3. Three-Step Stabilization -->
-  <section class="section section-light">
-    <!-- Added Container -->
+  <!-- Purpose-Built Section -->
+  <section class="section section-light purpose-built-section">
     <div class="container">
-      <h2 class="section-title">RAPID, THREE-STEP LIFE STABILIZATION</h2>
-      <p class="section-subtitle">Easily applied over conventional pressure dressings. Our intuitive, three-step approach guarantees consistent application across immediate and field support.</p>
-      
-      <div class="steps-grid">
-        <div class="step-card">
-          <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto/v1789860579/d0d4fe25fad4350feab9be74ee214735432133ea_pijjgz.jpg" alt="Step 1">
-          <div class="step-header">
-            <h4>Identify & Assess</h4>
-            <span>01</span>
-          </div>
-          <p>Locate the source of hemorrhage immediately. Assess if direct pressure is needed to avoid loss of life. Act decisively.</p>
-        </div>
-        <div class="step-card">
-          <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto/v1789860579/2812fd6602107bcc31301c9e1abd724fbd1625b2_pmnto5.jpg" alt="Step 2">
-          <div class="step-header">
-            <h4>Apply Pressure / Wrap</h4>
-            <span>02</span>
-          </div>
-          <p>Place the P-Block device over a dressing (if necessary). Use the band to tightly wrap and apply continuous mechanical pressure.</p>
-        </div>
-        <div class="step-card">
-          <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto/v1789860580/f875c20c099e0bc01e5173249f8deaf66cece9f6_urecpa.jpg" alt="Step 3">
-          <div class="step-header">
-            <h4>Lock & Secure</h4>
-            <span>03</span>
-          </div>
-          <p>Engage the single-catch mechanism to lock or hook around the shield. Ensure bandage stays tight and won't untether in transit.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h2 class="section-title six8-animate six8-fade-up">PURPOSE-BUILT. NOT OFF-THE-SHELF</h2>
 
-  <!-- 4. Founder Section -->
-  <section class="founder-section">  
-    <!-- Added Container -->
-    <div class="container founder-content">
-      <div class="founder-info">
-        <h2>URIAH <span class="highlight">POPP</span></h2>
-        <ul>
-          <li>Founder and CEO</li>
-          <li>Former U.S. Army Special Operations</li>
-          <li>Special Mission Unit Medic</li>
-          <li>Inventor and Product Developer</li>
-        </ul>
-        <a href="#" class="btn btn-primary">Learn More ></a>
+      <div class="purpose-intro six8-animate six8-fade-up six8-delay-100">
+        <p class="intro-bold">We don't simply put our name on someone else's product. Our equipment is designed around
+          the real demands of pre-hospital care.</p>
+        <p class="intro-light">From product specifications and functionality to materials, ergonomics and field
+          usability, we take an active role in how our products are developed. That means greater control over quality,
+          consistency and the way our equipment performs when it matters.</p>
       </div>
-      
-      <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto/v1789860580/e7ea36c4b54b49c3713fca6ff1d2cffef7bd4479_nmlxce.png" class="founder-image" alt="Uriah Popp">
-      
-      <div class="founder-quote">
-        <p>"Our mission is to save lives by advancing medical gear with innovation, life-saving solutions. Our gear gives responders the tools to make every second count."</p>
+
+      <!-- Blueprint Images Grid -->
+      <div class="purpose-images six8-animate six8-fade-in six8-delay-200">
+        <div class="image-main">
+          <img src="https://68medical.com/wp-content/uploads/2026/01/Advantage-Sketch-scaled.jpeg"
+            alt="Left side, Front, Isometric views">
+        </div>
+        <div class="image-side">
+          <img src="https://68medical.com/wp-content/uploads/2026/01/ProcCric-Techincal_.jpg"
+            alt="Technical drawing top">
+          <img src="https://68medical.com/wp-content/uploads/2026/01/NA-Sketch--scaled.jpeg"
+            alt="Technical drawing bottom">
+        </div>
+      </div>
+
+      <!-- Bottom Features Grid -->
+      <div class="purpose-features">
+        <div class="feature-col six8-animate six8-fade-up six8-delay-300">
+          <h4>Product ownership</h4>
+          <p>We develop and specify our products rather than simply applying a brand to an existing catalog item.</p>
+        </div>
+        <div class="feature-col six8-animate six8-fade-up six8-delay-400">
+          <h4>Purpose-built</h4>
+          <p>Product decisions start with the realities of emergency response and pre-hospital care.</p>
+        </div>
+        <div class="feature-col six8-animate six8-fade-up six8-delay-500">
+          <h4>Greater control</h4>
+          <p>Direct involvement in development gives us greater control over specifications, quality and consistency.
+          </p>
+        </div>
       </div>
     </div>
   </section>
-  
-  <!-- Stats Bar -->
-  <div class="stats-bar">
-    <!-- Added Container -->
-    <div class="container stats-bar-container">
-      <div class="stat-item">
-        <h4>23+</h4>
-        <p>Years Experience</p>
-      </div>
-      <div class="stat-item">
-        <h4>20+</h4>
-        <p>Patents Pending</p>
-      </div>
-      <div class="stat-item">
-        <h4>10+</h4>
-        <p>Global Partners</p>
-      </div>
-    </div>
-  </div>
 
   <!-- 5. Clinical Validation Section -->
-  <section class="section section-light">
-    <!-- Added Container -->
+  <section class="section section-dark">
     <div class="container">
       <div class="validation-grid">
-        <div class="val-left">
+        <div class="val-left six8-animate six8-fade-right">
           <h2>FIELD-TESTED. CLINICALLY VALIDATED.</h2>
-          <p>In tactical medicine, we evaluate devices by ease of application and clotting speed. The 6:8 Hemostatic Gauze routinely achieves complete clotting under 45 seconds during high-pressure field trials. It is a vital asset.</p>
+          <p>In tactical medicine, we evaluate devices by ease of application and clotting speed. The 6:8 Hemostatic
+            Gauze routinely achieves complete clotting under 45 seconds during high-pressure field trials. It is a vital
+            asset.</p>
           <div class="author-box">
-            <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_100/v1789860579/c73e9b9dec3b95b87906a8340930df9ed916bbc6_xeraau.jpg" alt="Dr. Craig">
+            <img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_100/v1789860579/c73e9b9dec3b95b87906a8340930df9ed916bbc6_xeraau.jpg"
+              alt="Dr. Craig">
             <div>
               <h5>Dr. Craig Gane, MD</h5>
               <span>Tactical Surgeon & Military Medical Director</span>
             </div>
           </div>
         </div>
-        
+
         <div class="val-right">
-          <div class="val-stat">
+          <div class="val-stat six8-animate six8-fade-left six8-delay-100">
             <h3 class="text-primary">99.2%</h3>
             <p>Success Rate</p>
           </div>
-          <div class="val-stat">
+          <div class="val-stat six8-animate six8-fade-left six8-delay-200">
             <h3>50K+</h3>
             <p>Units Deployed</p>
           </div>
-          <div class="val-stat">
+          <div class="val-stat six8-animate six8-fade-left six8-delay-300">
             <h3>CoTCCC</h3>
             <p>Recommended</p>
           </div>
-          <div class="val-stat">
+          <div class="val-stat six8-animate six8-fade-left six8-delay-400">
             <h3>ISO 13485</h3>
             <p>Certified Facility</p>
           </div>
@@ -284,19 +413,149 @@
     </div>
   </section>
 
-  <!-- 6. Footer CTA -->
-  <section class="section section-dark cta-section">
-    <!-- Added Container -->
+  <!-- Proud Distributor Marquee Section -->
+  <section class="distributor-section bg-light">
+    <div class="container distributor-container">
+
+      <!-- Fixed Title -->
+      <div class="distributor-title six8-animate six8-fade-right">
+        <h2>PROUD<br>DISTRIBUTOR</h2>
+      </div>
+
+      <!-- Scrolling Marquee -->
+      <div class="distributor-marquee six8-animate six8-fade-in six8-delay-200">
+        <div class="marquee-track">
+          <!-- First set of logos -->
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110465/25997249a278745407edf02139bcf54ae5d99655_o0pafo.jpg"
+              alt="Xmetix Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110496/Group_34_vuz3rh.png"
+              alt="Tempaid Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110473/aba8710256945c1619a59244d34483988c17c006_rddpme.png"
+              alt="SpotSee Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110478/e858bf83ddbe067f7e048fd66f03c76f992552a7_xhlnzr.jpg"
+              alt="HemCon Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110483/3369648d39229ae29ec23ed96d1337278e9cfea0_ahdafb.png"
+              alt="Safeguard Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110490/d6eec230c513be52daacecca25e1d87d6c4fee55_fcabsk.png"
+              alt="Celox Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110493/Group_35_cs757n.png"
+              alt="BloodStop Logo"></div>
+
+          <!-- Duplicated set of logos for a seamless loop -->
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110465/25997249a278745407edf02139bcf54ae5d99655_o0pafo.jpg"
+              alt="Xmetix Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110496/Group_34_vuz3rh.png"
+              alt="Tempaid Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110473/aba8710256945c1619a59244d34483988c17c006_rddpme.png"
+              alt="SpotSee Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110478/e858bf83ddbe067f7e048fd66f03c76f992552a7_xhlnzr.jpg"
+              alt="HemCon Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110483/3369648d39229ae29ec23ed96d1337278e9cfea0_ahdafb.png"
+              alt="Safeguard Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110490/d6eec230c513be52daacecca25e1d87d6c4fee55_fcabsk.png"
+              alt="Celox Logo"></div>
+          <div class="logo-slide"><img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790110493/Group_35_cs757n.png"
+              alt="BloodStop Logo"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Supporting First Responders Section -->
+  <section class="section section-dark responders-section">
     <div class="container">
-      <h2>BRING 6:8 TO YOUR TEAM</h2>
-      <p>Equip your first responders, military personnel, and law enforcement with field-tested gear built for survival. Contact us to learn more about bulk ordering and distribution.</p>
-      <div class="btn-group" style="justify-content: center;">
-        <a href="#" class="btn btn-primary">Request A Quote ></a>
-        <a href="#" class="btn btn-text">Contact Sales ></a>
+
+      <div class="responders-header six8-animate six8-fade-up">
+        <h2 class="section-title">SUPPORTING OUR FIRST<br>RESPONDERS</h2>
+        <p class="section-subtitle">Equip your first responders, active-duty personnel, or emergency medical staff with
+          medical tools built for survival. Get custom fleet rates, unit customization, and hands-on clinical training.
+        </p>
+
+        <div class="btn-group">
+          <a href="#" class="btn btn-primary">
+            REQUEST A DEMO &rarr;
+          </a>
+          <a href="#" class="btn btn-dark-outline">
+            CONTACT SALES &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- 4-Column Card Grid -->
+      <div class="responders-grid">
+
+        <!-- Card 1 -->
+        <div class="responder-card six8-animate six8-fade-up">
+          <div class="card-image">
+            <img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790111312/86b2fde7b3439324d5b2247c0f13f9754eb2ca63_xk586p.jpg"
+              alt="EMS and Paramedics">
+          </div>
+          <div class="card-content">
+            <h4>EMS & PARAMEDICS</h4>
+            <p>Equipment for mobile emergency medical teams and frontline responders.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="responder-card six8-animate six8-fade-up six8-delay-100">
+          <div class="card-image">
+            <img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790111307/b8da92649f403c225ff0c86a22d7a7f501ea47f6_bc0v3f.jpg"
+              alt="Hospitals">
+          </div>
+          <div class="card-content">
+            <h4>HOSPITALS</h4>
+            <p>Professional equipment for emergency departments, transport and clinical teams.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="responder-card six8-animate six8-fade-up six8-delay-200">
+          <div class="card-image">
+            <img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790111301/6b058379998bf71072992d64d1186dc35d279649_jphd5f.jpg"
+              alt="Fire & Rescue">
+          </div>
+          <div class="card-content">
+            <h4>FIRE & RESCUE</h4>
+            <p>Medical and rescue equipment for emergency response organizations.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="responder-card six8-animate six8-fade-up six8-delay-300">
+          <div class="card-image">
+            <img
+              src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790111294/d0fa30bfbbdf964651abe9495b72a0b2e239a356_g0foth.jpg"
+              alt="Corporate">
+          </div>
+          <div class="card-content">
+            <h4>CORPORATE</h4>
+            <p>Emergency medical solutions for workplaces, facilities and remote operations.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
