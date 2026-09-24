@@ -7,7 +7,7 @@
   <!-- Add Archivo Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://unpkg.com/globe.gl"></script>
 
@@ -20,17 +20,17 @@
   <nav class="navbar">
     <div class="container navbar-container">
       <div class="logo">
-        <img src="assets/68medical-logo.webp" alt="6:8 Medical Logo">
+        <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790229313/142d9268f644c0be4919e61b62dae0b0fd9c8853_cszdin.png" alt="6:8 Medical Logo">
       </div>
       <ul class="nav-links">
         <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#">Our Story</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">Resources</a></li>
-        <li><a href="#">Press / Media</a></li>
+        <li><a href="#">Press Release</a></li>
+        <li><a href="#">Contact Us</a></li>
       </ul>
       <div class="nav-actions">
-        <a href="#" class="btn btn-outline">Contact Us</a>
         <div class="cart-icon">🛒</div>
       </div>
     </div>
@@ -73,8 +73,8 @@
               a more effective bleeding management solution.
             </p>
             <div class="btn-group">
-              <a href="#" class="btn btn-primary">Shop Products</a>
-              <a href="#" class="btn btn-dark-outline">How It Works</a>
+              <a href="#" class="btn btn-primary has-right-arrow-after">Shop Products</a>
+              <a href="#" class="btn btn-dark-outline has-play-icon-before">How It Works</a>
             </div>
           </div>
 
@@ -150,13 +150,15 @@
         <input tabindex="1" type="radio" name="slide-nav" id="slide1-nav" checked>
         <p>Technology</p>
       </label>
+      <span class="separator"></span>
       <label>
         <input tabindex="2" type="radio" name="slide-nav" id="slide2-nav">
         <p>6:8 Medical</p>
       </label>
+      <span class="separator"></span>
       <label>
         <input tabindex="3" type="radio" name="slide-nav" id="slide3-nav">
-        <p>Global Partners</p> 
+        <p>Global Partners</p>
       </label>
     </div>
 
@@ -167,11 +169,11 @@
 
   <!-- Equipment Categories -->
   <section class="equipment-categories bg-light-alt">
-    <div class="equipment-categories__inner">
-      <div class="equipment-categories__grid">
+    <div class="equipment-categories__inner six8-animate six8-fade-up">
+      <div class="equipment-categories__grid marquee-track">
 
         <!-- Hemorrhage Control -->
-        <a href="/product-category/hemorrhage-control/" class="equipment-category six8-animate six8-fade-up">
+        <a href="/product-category/hemorrhage-control/" class="equipment-category">
           <div class="equipment-category__content">
             <span class="equipment-category__number">01</span>
             <h3>Hemorrhage<br>Control</h3>
@@ -187,7 +189,7 @@
         </a>
 
         <!-- Airway -->
-        <a href="/product-category/airway/" class="equipment-category six8-animate six8-fade-up six8-delay-100">
+        <a href="/product-category/airway/" class="equipment-category">
           <div class="equipment-category__content">
             <span class="equipment-category__number">02</span>
             <h3>Airway</h3>
@@ -203,7 +205,7 @@
         </a>
 
         <!-- Respiration -->
-        <a href="/product-category/respiration/" class="equipment-category six8-animate six8-fade-up six8-delay-200">
+        <a href="/product-category/respiration/" class="equipment-category">
           <div class="equipment-category__content">
             <span class="equipment-category__number">03</span>
             <h3>Respiration</h3>
@@ -219,7 +221,7 @@
         </a>
 
         <!-- Circulation -->
-        <a href="/product-category/circulation/" class="equipment-category six8-animate six8-fade-up six8-delay-300">
+        <a href="/product-category/circulation/" class="equipment-category">
           <div class="equipment-category__content">
             <span class="equipment-category__number">04</span>
             <h3>Circulation</h3>
@@ -235,7 +237,7 @@
         </a>
 
         <!-- Kits & Sets -->
-        <a href="/product-category/kits-sets/" class="equipment-category six8-animate six8-fade-up six8-delay-400">
+        <a href="/product-category/kits-sets/" class="equipment-category six8-animate">
           <div class="equipment-category__content">
             <span class="equipment-category__number">05</span>
             <h3>Kits &amp; Sets</h3>
@@ -252,7 +254,7 @@
 
         <!-- Rescue Equipment -->
         <a href="/product-category/rescue-equipment/"
-          class="equipment-category six8-animate six8-fade-up six8-delay-500">
+          class="equipment-category">
           <div class="equipment-category__content">
             <span class="equipment-category__number">06</span>
             <h3>Rescue<br>Equipment</h3>
@@ -282,13 +284,17 @@
       <div class="emergency-grid">
         <div class="stats-col">
           <div class="stat-card six8-animate six8-fade-right six8-delay-200">
-            <h3 class="text-primary">35%</h3>
+            <h3 class="six8-animate animation-count text-primary" style="--from: 0; --to: 35;" data-suffix="%">
+              <span>35%</span>
+            </h3>
             <p>Of Preventable Trauma Deaths</p>
             <span>are caused by hemorrhage before reaching definitive medical care, primarily from extremity
               injury.</span>
           </div>
           <div class="stat-card six8-animate six8-fade-right six8-delay-300">
-            <h3>00:00:01</h3>
+            <h3 class="six8-animate animation-count format-timer" style="--from: 0; --to: 1;">
+              <span>00:00:01</span>
+            </h3>
             <p>Every Second Matters</p>
             <span>Rapid, effective bleeding control means the difference between life and death. Single-use, easy
               application is critical.</span>
@@ -306,20 +312,65 @@
   <!-- 2. Product Showcase Card -->
   <section class="product-showcase-wrapper">
     <div class="container">
-      <div class="product-card six8-animate six8-fade-up">
-        <div class="product-card-content">
-          <h2><span class="text-primary">HEM</span>GUARD 4"<br>Targeted Pressure<br>Bandage</h2>
-          <p>The HEMGUARD® Targeted Pressure Bandage 4” is an advanced hemorrhage control dressing designed to deliver
-            focused compression where traditional bandages often fail.</p>
-          <div class="btn-group">
-            <a href="#" class="btn btn-primary">Learn More</a>
-            <a href="#" class="btn btn-outline-dark">How it works</a>
+      <div class="six8-carousel-inner">
+        <div class="six8-carousel">
+          <div class="six8-carousel-track">
+            <div class="six8-carousel-slide">
+              <div class="product-card six8-animate six8-fade-up">
+                <div class="product-card-content">
+                  <h2><span class="text-primary">HEM</span>GUARD 4"<br>Targeted Pressure<br>Bandage</h2>
+                  <p>The HEMGUARD® Targeted Pressure Bandage 4” is an advanced hemorrhage control dressing designed to
+                    deliver
+                    focused compression where traditional bandages often fail.</p>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-primary has-right-arrow-after">Learn More</a>
+                    <a href="#" class="btn btn-outline-dark has-play-icon-before">
+                      How it works</a>
+                  </div>
+                </div>
+                <div class="product-card-image">
+                  <img
+                    src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_1000/v1789860580/cadf582a502bc762cf6303932f9d6dc264712057_hdwmcu.png"
+                    alt="Hemguard Bandages">
+                </div>
+              </div>
+            </div>
+
+            <div class="six8-carousel-slide">
+              <div class="product-card six8-animate six8-fade-up">
+                <div class="product-card-content">
+                  <h2><span class="text-primary">HEM</span>GUARD 4"<br>Targeted Pressure<br>Bandage</h2>
+                  <p>The HEMGUARD® Targeted Pressure Bandage 4” is an advanced hemorrhage control dressing designed to
+                    deliver
+                    focused compression where traditional bandages often fail.</p>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-primary has-right-arrow-after">Learn More</a>
+                    <a href="#" class="btn btn-outline-dark has-play-icon-before">How it works</a>
+                  </div>
+                </div>
+                <div class="product-card-image">
+                  <img
+                    src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_1000/v1789860580/cadf582a502bc762cf6303932f9d6dc264712057_hdwmcu.png"
+                    alt="Hemguard Bandages">
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="product-card-image">
-          <img
-            src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_1000/v1789860580/cadf582a502bc762cf6303932f9d6dc264712057_hdwmcu.png"
-            alt="Hemguard Bandages">
+
+          <div class="six8-carousel-controls" data-position="center">
+            <button class="six8-btn-prev" aria-label="Previous Testimonial">
+              <!-- Simple SVG left arrow -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button class="six8-btn-next" aria-label="Next Testimonial">
+              <!-- Simple SVG right arrow -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -372,37 +423,96 @@
   </section>
 
   <!-- 5. Clinical Validation Section -->
-  <section class="section section-dark">
+  <section id="validation-section" class="section section-dark">
     <div class="container">
+      <h2 class="section-title six8-animate six8-fade-up">FIELD-TESTED. CLINICALLY VALIDATED.</h2>
       <div class="validation-grid">
         <div class="val-left six8-animate six8-fade-right">
-          <h2>FIELD-TESTED. CLINICALLY VALIDATED.</h2>
-          <p>In tactical medicine, we evaluate devices by ease of application and clotting speed. The 6:8 Hemostatic
-            Gauze routinely achieves complete clotting under 45 seconds during high-pressure field trials. It is a vital
-            asset.</p>
-          <div class="author-box">
-            <img
-              src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_100/v1789860579/c73e9b9dec3b95b87906a8340930df9ed916bbc6_xeraau.jpg"
-              alt="Dr. Craig">
-            <div>
-              <h5>Dr. Craig Gane, MD</h5>
-              <span>Tactical Surgeon & Military Medical Director</span>
+          <!-- Replace the existing text and author-box with this -->
+          <div class="six8-carousel">
+            <div class="six8-carousel-inner">
+              <div class="six8-carousel-track">
+                <!-- Slide 1 (Active by default) -->
+                <div class="six8-carousel-slide active">
+                  <p>In tactical medicine, we evaluate devices by ease of application and clotting speed. The 6:8
+                    Hemostatic Gauze routinely achieves complete clotting under 45 seconds during high-pressure field
+                    trials. It is a vital asset.</p>
+                  <div class="author-box">
+                    <img
+                      src="https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_100/v1789860579/c73e9b9dec3b95b87906a8340930df9ed916bbc6_xeraau.jpg"
+                      alt="Dr. Craig">
+                    <div>
+                      <h5>Dr. Craig Gane, MD</h5>
+                      <span>Tactical Surgeon & Military Medical Director</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="six8-carousel-slide">
+                  <p>"The intuitive three-step application process of the HEMGUARD bandage has significantly reduced our
+                    deployment times in the field. It's purpose-built equipment that truly understands the reality of
+                    trauma care."</p>
+                  <div class="author-box">
+                    <img src="https://via.placeholder.com/100x100/333333/ffffff?text=SJ" alt="Sarah Jenkins">
+                    <div>
+                      <h5>Sarah Jenkins</h5>
+                      <span>Chief Paramedic, Metro EMS</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="six8-carousel-slide">
+                  <p>"When every second matters, you cannot rely on off-the-shelf solutions. 6:8 Medical's targeted
+                    pressure technology gives our first responders the confidence to handle severe extremity injuries
+                    effectively."</p>
+                  <div class="author-box">
+                    <img src="https://via.placeholder.com/100x100/333333/ffffff?text=MR" alt="Marcus Reyes">
+                    <div>
+                      <h5>Marcus Reyes</h5>
+                      <span>Emergency Response Coordinator</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <!-- Carousel Controls -->
+            <div class="six8-carousel-controls">
+              <button class="six8-btn-prev" aria-label="Previous Testimonial">
+                <!-- Simple SVG left arrow -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button class="six8-btn-next" aria-label="Next Testimonial">
+                <!-- Simple SVG right arrow -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+
           </div>
         </div>
 
         <div class="val-right">
           <div class="val-stat six8-animate six8-fade-left six8-delay-100">
-            <h3 class="text-primary">99.2%</h3>
-            <p>Success Rate</p>
+            <h3 class="six8-animate animation-count text-primary" style="--from: 0; --to: 99;" data-suffix=".2%">
+              <span>99.2%</span>
+            </h3>
+            <p>Efficacy Rate</p>
           </div>
           <div class="val-stat six8-animate six8-fade-left six8-delay-200">
-            <h3>50K+</h3>
+            <h3 class="six8-animate animation-count" style="--from: 0; --to: 50;" data-suffix="K+">
+              <span>50k+</span>
+            </h3>
             <p>Units Deployed</p>
           </div>
           <div class="val-stat six8-animate six8-fade-left six8-delay-300">
             <h3>CoTCCC</h3>
-            <p>Recommended</p>
+            <p>Recommended Tech</p>
           </div>
           <div class="val-stat six8-animate six8-fade-left six8-delay-400">
             <h3>ISO 13485</h3>
@@ -487,11 +597,11 @@
         </p>
 
         <div class="btn-group">
-          <a href="#" class="btn btn-primary">
-            REQUEST A DEMO &rarr;
+          <a href="#" class="btn btn-primary has-right-arrow-after">
+            REQUEST A DEMO
           </a>
-          <a href="#" class="btn btn-dark-outline">
-            CONTACT SALES &rarr;
+          <a href="#" class="btn btn-dark-outline has-right-arrow-after">
+            CONTACT SALES
           </a>
         </div>
       </div>
@@ -555,7 +665,79 @@
     </div>
   </section>
 
+  <!-- Footer Section -->
+  <footer class="site-footer bg-light">
+    <div class="container">
+      
+      <div class="footer-top">
+        <!-- Brand / Logo Section -->
+        <div class="footer-brand">
+          <!-- Make sure to point this to the specific logo version used in the image -->
+          <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1790229310/0d266847db12cab857b1f70f365880026a7f30bd_nbci2s.png" alt="6:8 Medical Solutions" class="footer-logo">
+          <p>Advancing medical technologies that eliminate preventable deaths during tactical first responses.</p>
+        </div>
+
+        <!-- Links Grid -->
+        <div class="footer-links-grid">
+          
+          <!-- Column 1 -->
+          <div class="footer-link-col">
+            <h4>PRODUCTS</h4>
+            <ul>
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Inquiries</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="footer-link-col">
+            <h4>COMPANY</h4>
+            <ul>
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Inquiries</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="footer-link-col">
+            <h4>RESOURCES</h4>
+            <ul>
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Inquiries</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="footer-link-col">
+            <h4>LEGAL</h4>
+            <ul>
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Inquiries</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer Bottom (Copyright & Legal) -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 6:8 Medical Technology. All rights reserved.</p>
+        <p>FDA cleared &amp; combat-verified equipment.</p>
+      </div>
+
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
+
 
 </html>
