@@ -521,6 +521,7 @@ body {
     font-weight: 700;
     cursor: pointer;
     position: relative;
+    isolation: isolate;
 
     width: 16px;
     max-width: 16px;
@@ -563,6 +564,7 @@ body {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(5px);
+    overflow:hidden;
 }
 
 .hero-navigation label p {
@@ -593,6 +595,26 @@ body {
         0 0 0 2px rgba(242, 101, 34, 0.35);
 }
 
+.hero-navigation label:has(input)::after {
+    interpolate-size: allow-keywords;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    background: var(--primary);
+    border-radius: inherit;
+    z-index: -1; /* Keeps it behind text/input, but ABOVE the label background */
+    /* transition: width 0.5s ease; */
+    pointer-events: none;
+}
+
+/* 3. Checked State */
+.hero-navigation label:has(input:checked)::after {
+    width: 100%;
+    transition: width 10s linear;
+}
 
 /* =========================================================
    GLOBE

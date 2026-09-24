@@ -172,3 +172,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const heroNavInputs = Array.from(document.querySelectorAll('.hero-navigation input[name="slide-nav"]'));
+  
+  if (heroNavInputs.length === 0) return;
+
+  // 1. Function to activate a specific slide index and restart transition
+  const activateSlide = (index) => {
+    // Uncheck all inputs first so transition resets to 0% width
+    heroNavInputs.forEach(input => input.checked = false);
+    
+    // Force a tiny browser repaint delay before checking the target input
+    requestAnimationFrame(() => {
+      heroNavInputs[index].checked = true;
+      heroNavInputs[index].dispatchEvent(new Event('change', { bubbles: true }));
+    });
+  };
+
+  // 2. Trigger animation immediately on initial load for whichever was checked in HTML
+  const initialIndex = heroNavInputs.findIndex(input => input.checked);
+  activateSlide(initialIndex !== -1 ? initialIndex : 0);
+
+  // 3. Run autoplay timer
+  setInterval(() => {
+    const currentIndex = heroNavInputs.findIndex(input => input.checked);
+    const nextIndex = (currentIndex + 1) % heroNavInputs.length;
+    activateSlide(nextIndex);
+  }, 10000);
+});
