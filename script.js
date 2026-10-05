@@ -199,5 +199,5 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentIndex = heroNavInputs.findIndex(input => input.checked);
     const nextIndex = (currentIndex + 1) % heroNavInputs.length;
     activateSlide(nextIndex);
-  }, 10000);
+  }, 11000);
 });
