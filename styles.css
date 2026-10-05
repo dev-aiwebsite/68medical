@@ -5,6 +5,7 @@
     --text-muted: #999999;
     --border-color: #333333;
     --rounded: 12px;
+    --content-width: 1400px;
 
     /* Light Mode Variables */
     --bg-light: #ffffff;
@@ -93,7 +94,7 @@ body {
 
 /* --- Global Containers --- */
 .container {
-    max-width: 1200px;
+    max-width: var(--content-width);
     margin: 0 auto;
     width: 100%;
     padding: 0 2rem;
@@ -301,9 +302,9 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.35) 0%,
-            rgba(0, 0, 0, 0.08) 45%,
-            rgba(0, 0, 0, 0.18) 100%
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.28) 45%,
+            rgba(0, 0, 0, 0.38) 100%
         );
 
     z-index: -2;
@@ -530,7 +531,7 @@ body {
 
 .hero-navigation {
     position: absolute;
-    left: calc((100vw - min(100vw,1200px)) * .5);
+    left: calc((100vw - min(100vw, var(--content-width))) * .5);
     padding-inline: 2rem;
     bottom: 120px;
     display: flex;
@@ -1319,10 +1320,10 @@ background: var(--bg-dark);
     content: '';
     position: absolute;
     top: 50%;
-    right: 8%;
+    right: 2cap;
     translate: 0% -50%;
-    width: 50%;
-    height: 100%;
+    width: 60%;
+    aspect-ratio: 1 / 1;
     background: radial-gradient(circle, #a77d7d 0%, rgba(10, 10, 10, 0) 70%);
     z-index: 0;
     pointer-events: none;
@@ -1340,7 +1341,7 @@ background: var(--bg-dark);
 }
 
 .product-card-content {
-    max-width: 45%;
+    max-width: 35%;
 }
 
 .product-card-content h2 {
@@ -1359,14 +1360,14 @@ background: var(--bg-dark);
 }
 
 .product-card-image {
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: center;
 }
 
 .product-card-image img {
     max-width: 100%;
-    height: auto;
+    height: min(90dvh, 800px);
 }
 
 .product-showcase-wrapper .container {
