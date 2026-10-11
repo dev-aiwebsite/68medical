@@ -1,0 +1,471 @@
+/* =========================================================
+   ABOUT US PAGE CSS
+   ========================================================= */
+
+/* --- 1. Intro Section --- */
+.about-intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0;
+    align-items: end;
+    padding-bottom: 0;
+}
+
+.intro-right {
+    padding: 0 3rem;
+}
+
+.about-orange-line {
+    height: 4px;
+    width: 100%;
+    max-width: 80%;
+    background: var(--primary);
+    margin-top: 2rem;
+}
+
+.about-intro p.font-giest-mono.text-muted {
+    margin-top: 2rem;
+    color: var(--text-neutral);
+    font-size: .875rem;
+}
+
+.about-intro .section-subtitle {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-neutral);
+}
+
+/* --- 2. Blueprints --- */
+.blueprint-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0;
+    align-items: stretch;
+}
+
+
+.blueprint-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.blueprint-card {
+    background-color: #111;
+    color: white;
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blueprint-card .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.blueprint-card h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.blueprint-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.blueprint-images,
+.about-intro .intro-left {
+    padding-left: max((calc((100vw - var(--content-width)) / 3) + 2rem), 2rem);
+}
+.blueprint-images,
+.about-intro .intro-right {
+    padding-right: max((calc((100vw - var(--content-width)) / 3) + 2rem), 2rem);
+}
+
+/* --- 3. Team Grid --- */
+.team-section {
+    padding-top: 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.team-grid img {
+    width: 100%;
+    aspect-ratio: 10 / 8;
+    object-fit: cover;
+    border-radius: calc(var(--rounded) * 1.5);
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.team-grid img:hover {
+    filter: grayscale(0%);
+}
+
+/* --- 4. Founder Section --- */
+section.about-founder {
+    padding-block: 0;
+}
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.founder-content .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.founder-content p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.founder-content .quote {
+    font-style: italic;
+    color: var(--text-dark);
+    border-left: 3px solid var(--primary);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+}
+
+.founder-stats {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.founder-stats .stat h3 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 0.2rem;
+    line-height: 1;
+}
+
+.founder-stats .stat h3.black {
+    color: var(--text-dark);
+}
+
+.founder-stats .stat span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.founder-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.founder-image img {
+    width: auto;
+    height: max(90vh, 600px);
+    object-fit: contain;
+    object-position: bottom;
+}
+
+/* --- 5. Mission & Vision --- */
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.mv-block {
+    padding-right: 2rem;
+}
+
+.mv-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.mv-block h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.mv-block p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- 6. Global Reach --- */
+.reach-section {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0;
+    height: min(90vh, 800px);
+}
+
+.text-center {
+    text-align: center;
+    display: block;
+}
+
+.reach-section .eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.locations-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.loc {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.loc:hover span:last-child {
+    text-shadow: 0 0 20px var(--primary);
+    color: var(--primary);
+}
+
+.loc span:first-child {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* --- 7. Split CTA --- */
+.cta-split {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    width: 100%;
+}
+
+
+.cta-content {
+    background-color: var(--bg-dark);
+    color: white;
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cta-split>div:first-child {
+    padding-left: max(((calc(100vw - var(--content-width)) / 2) + 2rem), 2rem);
+}
+
+.cta-content .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.cta-content h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.cta-content p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+}
+
+.cta-image {
+    width: 100%;
+    height: 100%;
+    background: url('https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_1200/v1791719951/9e5207f98a332fc868efe513a42fb34aa8779ee2_k5ykbs.avif') center center / cover no-repeat;
+}
+
+
+
+/* --- Responsive Updates --- */
+@media (max-width: 1024px) {
+
+    .about-intro-grid,
+    .blueprint-grid,
+    .founder-grid,
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-split {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-content {
+        padding: 4rem 2rem;
+    }
+
+    .locations-grid {
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   GLOBE
+   ========================================================= */
+
+#globe-container {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    height: 150vh;
+    transform: translateY(24%);
+    z-index: 99;
+
+    cursor: grab;
+    
+}
+
+
+#globe-container:active {
+    cursor: grabbing;
+}
+
+
+/* =========================================================
+   GLOBE MARKERS
+   ========================================================= */
+
+.marker-wrapper {
+    position: relative;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    z-index: 10;
+}
+
+
+.globe-marker {
+    position: absolute;
+
+    top: -8px;
+    left: -8px;
+
+    width: 16px;
+    height: 16px;
+
+    background: #fff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 15px 5px rgba(255, 255, 255, 0.6);
+
+    transition: all 0.3s ease;
+}
+
+
+.marker-line {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 35px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    transform: rotate(-45deg);
+
+    transform-origin: left center;
+}
+
+
+.marker-label {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-size: 11px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.marker-wrapper:hover {
+    z-index: 20;
+}
+
+
+.marker-wrapper:hover .globe-marker {
+    background: var(--primary);
+    box-shadow:
+        0 0 20px 8px rgba(242, 101, 34, 0.8);
+    transform: scale(1.2);
+}
+
+
+.marker-wrapper:hover .marker-line {
+    background: var(--primary);
+}
+
+
+.marker-wrapper:hover .marker-label {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(10, 10, 10, 0.95);
+    transform: translateY(-2px);
+}

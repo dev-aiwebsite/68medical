@@ -1,0 +1,738 @@
+:root {
+    --primary: #f26522;
+    --bg-dark: #0a0a0a;
+    --text-main: #ffffff;
+    --text-muted: #9CA3AF;
+    --border-color: #333333;
+    --rounded: 12px;
+    --content-width: 1440px;
+    --text-neutral: #55595d;
+
+    /* Light Mode Variables */
+    --bg-light: #ffffff;
+    --bg-light-alt: #f9f9f9;
+    /* --text-dark: #1a1a1a; */
+    --text-dark: #1a1a1a;
+    --border-light: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Archivo', sans-serif;
+    /* background-color: var(--bg-dark); */
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+main {
+    padding-top: 78px;
+}
+
+.font-giest-mono {
+    font-family: 'Giest Mono', monospace;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+.six8-text-xl {
+    font-size: clamp(3.5rem, 5.5vw, 5rem);
+}
+
+.six8-logo.dark {
+    filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.2);
+}
+
+.six8-logo {
+    position: relative;
+    width: 200px;
+    aspect-ratio: 17 / 4;
+    overflow: hidden;
+}
+
+.six8-logo img {
+    position: absolute;
+    width: 214%;
+    max-width: none;
+    height: auto;
+    left: 9.5%;
+    top: 46%;
+    transform: translate(-9.5%, -46%);
+}
+
+.hemguard-logo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 17 / 3.5;
+    overflow: hidden;
+}
+
+.hemguard-logo img {
+    position: absolute;
+    width: 214%;
+    max-width: none;
+    height: auto;
+    left: 9.5%;
+    top: 74%;
+    transform: translate(-9.5%, -74%);
+}
+
+.bg-light-alt {
+    background-color: var(--bg-light-alt);
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.has-play-icon-before::before {
+    content: "▶";
+    margin-right: 0.5rem;
+    font-size: 80%;
+}
+.has-play-icon-after::after {
+    content: "▶";
+    margin-left: 0.5rem;
+    font-size: 80%;
+}
+
+.has-right-arrow-after::after {
+    content: "→";
+    margin-left: 0.5rem;
+    font-size: 120%;
+}
+
+
+
+/* --- Global Containers --- */
+.container {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.container-full {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Navigation --- */
+.navbar {
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    background: #0d0d0f;
+    /* background: #000a; */
+    /* backdrop-filter: blur(10px); */
+    padding: 1rem 0;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1px;
+    align-items: center;
+    background: #ddd1;
+    padding: .5rem;
+    border-radius: 50em;
+    border: solid 1px #ddd1;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.nav-links a {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.nav-links a.active {
+    background-color: var(--primary);
+    color: var(--text-main);
+    
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 12px 20px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-outline {
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--text-main);
+    color: var(--bg-dark);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--primary);
+}
+
+.btn-outline-dark {
+    background: rgba(26, 26, 31, 1);
+    color: white;
+    border: 1px solid #fff2;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn-group {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Orange button */
+
+.btn-primary {
+    background: var(--primary);
+
+    border: 1px solid var(--primary);
+
+    color: #fff;
+}
+
+
+.btn-primary:hover {
+    background: #ff762b;
+
+    border-color: #ff762b;
+
+    color: #fff;
+}
+
+
+/* Dark button from reference */
+
+.btn-dark-outline {
+    background: #111318;
+
+    border: 1px solid #111318;
+
+    color: #fff;
+}
+
+
+.btn-dark-outline:hover {
+    background: #25272c;
+
+    border-color: #25272c;
+
+    color: #fff;
+}
+
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+
+    overflow: hidden;
+    padding-top: 100px
+}
+
+
+.bg-media {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -3;
+}
+
+
+/* ---------------------------------------------------------
+   VIDEO OVERLAY
+   --------------------------------------------------------- */
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.28) 45%,
+            rgba(0, 0, 0, 0.38) 100%
+        );
+
+    z-index: -2;
+
+    pointer-events: none;
+}
+
+
+/* Slight darkening at the bottom */
+.slide::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 180px;
+
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.22),
+            transparent);
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+.bg-media {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -3;
+}
+
+
+/* --- General Sections --- */
+.section {
+    padding: 6rem 0;
+}
+
+.section-light {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.section-light-alt {
+    background-color: var(--bg-light-alt);
+    color: var(--text-dark);
+}
+
+.section-dark {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+    color: inherit;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+/* =========================================================
+   CAROUSEL (SLIDE ANIMATION)
+   ========================================================= */
+
+.six8-carousel {
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.six8-carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.six8-carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.six8-carousel-controls {
+    display: flex;
+    gap: 12px;
+    margin-top: 2rem;
+}
+
+.six8-carousel-controls[data-position="center"] {
+    justify-content: center;
+}
+
+.six8-btn-prev,
+.six8-btn-next {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.six8-btn-prev:hover,
+.six8-btn-next:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.six8-btn-prev:active,
+.six8-btn-next:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================================
+   ENTRANCE ANIMATIONS (NAMESPACED FOR WORDPRESS)
+   ========================================================= */
+
+/* Base hidden state */
+.six8-animate {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* Animation directions */
+.six8-fade-up {
+    transform: translateY(40px);
+}
+
+.six8-fade-down {
+    transform: translateY(-40px);
+}
+
+.six8-fade-left {
+    transform: translateX(40px);
+}
+
+.six8-fade-right {
+    transform: translateX(-40px);
+}
+
+.six8-fade-in {
+    transform: scale(0.95);
+}
+
+/* Active state (triggered by JS) */
+.six8-animate.six8-visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Optional Stagger Delays */
+.six8-delay-100 {
+    transition-delay: 100ms;
+}
+
+.six8-delay-200 {
+    transition-delay: 200ms;
+}
+
+.six8-delay-300 {
+    transition-delay: 300ms;
+}
+
+.six8-delay-400 {
+    transition-delay: 400ms;
+}
+
+.six8-delay-500 {
+    transition-delay: 500ms;
+}
+
+/* Number Counting Animation */
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes countUp {
+  from { --num: var(--from, 0); }
+  to { --num: var(--to, 100); }
+}
+
+.animation-count {
+  position: relative;
+  counter-reset: count var(--num);
+}
+
+.animation-count span { visibility: hidden; }
+
+.six8-visible.animation-count {
+  animation: countUp 3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.animation-count::after {
+  content: counter(count) attr(data-suffix);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.animation-count.format-timer::after {
+  content: "00:00:" counter(count, decimal-leading-zero);
+}
+
+@keyframes six8-pulse-breathe {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.6);
+  }
+}
+
+@keyframes six8-radar-ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+
+/* =========================================================
+   FOOTER SECTION
+   ========================================================= */
+
+.site-footer {
+    background-color: #ffffff; /* Explicitly white based on the design */
+    padding: 5rem 0 3rem;
+    color: var(--text-dark);
+}
+
+.site-footer  .six8-logo {
+    width: min(300px, 100%);
+    margin-bottom: 10px;
+}
+
+.site-footer .six8-logo img {
+    left: 8.5%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+    margin-bottom: 10rem;
+}
+
+/* Brand Section (Left side) */
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-logo {
+    width: 220px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Links Grid (Right side) */
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    flex: 1;
+}
+
+.footer-link-col h4 {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.footer-link-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-link-col li {
+    margin-bottom: 1rem;
+}
+
+.footer-link-col a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.footer-link-col a:hover {
+    color: var(--primary);
+}
+
+/* Footer Bottom (Copyright & Legal) */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-light);
+    padding-top: 2rem;
+}
+
+.footer-bottom p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* =========================================================
+   FOOTER RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .footer-brand {
+        max-width: 100%;
+    }
+    
+    .footer-links-grid {
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-links-grid {
+        grid-template-columns: 1fr;
+    }
+}

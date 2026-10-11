@@ -30,6 +30,9 @@ body {
 }
 
 
+.six8-logo.dark {
+    filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.2);
+}
 
 .six8-logo {
     position: relative;
@@ -44,8 +47,8 @@ body {
     max-width: none;
     height: auto;
     left: 9.5%;
-    top: 18%;
-    transform: translate(-9.5%, -18%);
+    top: 46%;
+    transform: translate(-9.5%, -46%);
 }
 
 .hemguard-logo {
