@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add Archivo Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/contact.css">
+    <link rel="stylesheet" href="/styles/footer-cta.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <div class="six8-logo">
+                <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1791162763/c7ddab5935fca52f70c8b4977b5ad6b618267737_uf7tti.png"
+                    alt="6:8 Medical Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about-us.html">Our Story</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Press Release</a></li>
+                <li><a class="active" href="/contact.html">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="cart-icon">🛒</div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contact-page">
+
+        <!-- 1. Intro Section -->
+        <section class="section section-light contact-intro">
+            <div class="container contact-intro-grid">
+                <div class="intro-left six8-animate six8-fade-right">
+                    <h1 class="six8-text-xl">
+                        CONTACT US.<br>
+                        LET'S TALK.
+                    </h1>
+                </div>
+                <div class="intro-right six8-animate six8-fade-left">
+                    <p class="section-subtitle">
+                        Product questions, team requirements or a new partnership. Tell us what you need. We'll connect
+                        you with the right people.
+                    </p>
+                    <p class="font-giest-mono text-muted"
+                        style="font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;">
+                        PRODUCTS / SUPPORT / PARTNERSHIPS
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Main Form & Sidebar Section -->
+        <section class="section section-light contact-main-section" style="padding-top: 0;">
+            <div class="container contact-layout-grid">
+
+                <!-- Form Column -->
+                <div class="contact-form-col six8-animate six8-fade-up">
+                    <div class="form-header">
+                        <h2>Send us a message</h2>
+                        <span class="required-note"><span class="text-primary">*</span> REQUIRED FIELDS</span>
+                    </div>
+                    <p class="form-sub">A few details will help us direct your enquiry to the right team.</p>
+
+                    <form class="six8-contact-form" action="#" method="POST">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName">First name <span class="req">*</span></label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Your first name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last name <span class="req">*</span></label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email address <span class="req">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="you@organisation.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone number (optional)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Include country code">
+                            </div>
+                            <div class="form-group">
+                                <label for="organisation">Organisation (optional)</label>
+                                <input type="text" id="organisation" name="organisation"
+                                    placeholder="Company or team name">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country / region <span class="req">*</span></label>
+                                <select id="country" name="country" required>
+                                    <option value="" disabled selected>Select your country</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="AU">Australia</option>
+                                    <!-- Add more countries as needed -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="enquiryType">Enquiry type <span class="req">*</span></label>
+                                <select id="enquiryType" name="enquiryType" required>
+                                    <option value="" disabled selected>Select an enquiry type</option>
+                                    <option value="product">Product enquiries</option>
+                                    <option value="partnership">Partnerships & distribution</option>
+                                    <option value="media">Press & media</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="productInterest">Product interest (optional)</label>
+                                <select id="productInterest" name="productInterest">
+                                    <option value="" disabled selected>Select a product category</option>
+                                    <option value="hemorrhage">Hemorrhage Control</option>
+                                    <option value="airway">Airway</option>
+                                    <option value="kits">Kits & Sets</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">Your message <span class="req">*</span></label>
+                                <textarea id="message" name="message" rows="5"
+                                    placeholder="Tell us how we can help. Include product names, quantities or any relevant details."
+                                    required></textarea>
+                                <span class="field-hint">Please do not include patient details or sensitive medical
+                                    information.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-consent full-width">
+                            <label class="checkbox-container">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                <span class="consent-text">I agree to the <a href="#">Privacy Policy</a> and consent to
+                                    6:8 Medical contacting me about this enquiry. <span class="req">*</span></span>
+                            </label>
+                        </div>
+
+                        <div class="form-submit full-width">
+                            <button type="submit" class="btn btn-primary has-right-arrow-after">Send message</button>
+                            <span class="submit-note">Your details will only be used to respond to your enquiry.</span>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Sidebar Column -->
+                <div class="contact-sidebar-col">
+                    <!-- Support Card -->
+                    <div class="support-card six8-animate six8-fade-left">
+                        <span class="eyebrow">HERE TO HELP</span>
+                        <h2>THE RIGHT TEAM.<br>THE RIGHT<br>SUPPORT.</h2>
+
+                        <div class="support-item">
+                            <h4>Product enquiries</h4>
+                            <p>Product details, availability and equipment for your team.</p>
+                        </div>
+                        <div class="support-item">
+                            <h4>Partnerships & distribution</h4>
+                            <p>Connect with us about supplying 6:8 equipment in your region.</p>
+                        </div>
+                        <div class="support-item">
+                            <h4>Press & media</h4>
+                            <p>Company information, interviews and the story behind our products.</p>
+                        </div>
+                        <span class="eyebrow bottom-eyebrow">SELECT YOUR ENQUIRY TYPE IN THE FORM.</span>
+                    </div>
+
+                    <!-- Sidebar Image -->
+                    <div class="sidebar-image six8-animate six8-fade-up six8-delay-100">
+                        <img src="https://via.placeholder.com/600x400?text=Training+Session"
+                            alt="First responder training">
+                        <span class="caption uppercase font-giest-mono">SUPPORTING THE PEOPLE WHO RESPOND FIRST.</span>
+                    </div>
+
+                    <!-- Warning Box -->
+                    <div class="warning-box six8-animate six8-fade-up six8-delay-200">
+                        <h4>Not for medical emergencies</h4>
+                        <p>This form is for business and product enquiries. In an emergency, contact your local
+                            emergency services.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. Footer Info Grid -->
+        <section class="section section-light-alt contact-help-section">
+            <div class="container">
+                <span class="eyebrow uppercase font-giest-mono" style="margin-bottom: 2rem; display: block;">MAKE THE
+                    MOST OF YOUR MESSAGE</span>
+                <div class="help-grid six8-animate six8-fade-up">
+                    <div class="help-col">
+                        <h4>Looking for a quote?</h4>
+                        <p>Select Product enquiries and include the products, quantities and delivery country. We'll
+                            help you explore the options for your team.</p>
+                    </div>
+                    <div class="help-col">
+                        <h4>Need help with an order?</h4>
+                        <p>Select Order support and include your order reference in the message so our team can find the
+                            details quickly.</p>
+                    </div>
+                    <div class="help-col">
+                        <h4>Interested in working together?</h4>
+                        <p>Select Partnerships & distribution. Tell us about your organisation, location and the people
+                            you support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="cta-split section-dark">
+            <div class="cta-content six8-animate six8-fade-right">
+                <span class="eyebrow">SUPPORTING OUR FIRST RESPONDERS</span>
+                <h2>NEED A RESOURCE?<br>LET'S TALK.</h2>
+                <p>Looking for product information or support for your team? Tell us what you need. We'll help you find
+                    the
+                    right resources.</p>
+                <div class="cta-button-wrapper six8-animate six8-fade-right six8-delay-200">
+                    <hr>
+                    <a href="/contact-us/" class="btn btn-primary has-right-arrow-after"
+                        style="width: fit-content;">Contact our
+                        team</a>
+
+                </div>
+            </div>
+            <div class="cta-image six8-animate six8-fade-left">
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer bg-light">
+        <div class="container">
+
+            <div class="footer-top">
+                <!-- Brand / Logo Section -->
+                <div class="footer-brand">
+                    <!-- Make sure to point this to the specific logo version used in the image -->
+                    <div class="six8-logo dark">
+                        <img src="https://res.cloudinary.com/dh7iwoafo/image/upload/v1791162763/c7ddab5935fca52f70c8b4977b5ad6b618267737_uf7tti.png"
+                            alt="6:8 Medical Logo">
+                    </div>
+                    <p>Advancing medical technologies that eliminate preventable deaths during tactical first responses.
+                    </p>
+                </div>
+
+                <!-- Links Grid -->
+                <div class="footer-links-grid">
+
+                    <!-- Column 1 -->
+                    <div class="footer-link-col">
+                        <h4>PRODUCTS</h4>
+                        <ul>
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Inquiries</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="footer-link-col">
+                        <h4>COMPANY</h4>
+                        <ul>
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Inquiries</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="footer-link-col">
+                        <h4>RESOURCES</h4>
+                        <ul>
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Inquiries</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4 -->
+                    <div class="footer-link-col">
+                        <h4>LEGAL</h4>
+                        <ul>
+                            <li><a href="#">Overview</a></li>
+                            <li><a href="#">Technology</a></li>
+                            <li><a href="#">Inquiries</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Footer Bottom (Copyright & Legal) -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 6:8 Medical Technology. All rights reserved.</p>
+                <p>FDA cleared &amp; combat-verified equipment.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="/scripts/global-script.js"></script>
+
+</body>

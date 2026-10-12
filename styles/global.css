@@ -187,19 +187,31 @@ main {
     gap: 1.5rem;
 }
 
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
 /* --- Buttons --- */
 .btn {
     display: inline-flex;
+    gap:0;
     align-items: center;
     justify-content: center;
-    min-height: 34px;
+    min-height: 46px;
     padding: 12px 20px;
-    border-radius: 14px;
-    font-size: 12px;
-    font-weight: 400;
+    border-radius: 1.4rem;
+    font-size: 14px;
+    font-weight: 500;
     line-height: 1;
     text-decoration: none;
-    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    transition:gap 0.25s ease, transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.btn:hover {
+    gap: 8px;
+    border-color: var(--primary);
+    box-shadow: 0 0 30px var(--primary);
 }
 
 .btn-outline {
@@ -213,28 +225,6 @@ main {
     color: var(--bg-dark);
 }
 
-.btn-primary {
-    background: var(--primary);
-    color: white;
-    border: 1px solid var(--primary);
-}
-
-.btn-primary:hover {
-    background: transparent;
-    color: var(--primary);
-}
-
-.btn-outline-dark {
-    background: rgba(26, 26, 31, 1);
-    color: white;
-    border: 1px solid #fff2;
-
-}
-
-
-/* =========================================================
-   BUTTONS
-   ========================================================= */
 
 .btn-group {
     display: flex;
@@ -245,26 +235,10 @@ main {
 }
 
 
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-
-/* Orange button */
-
 .btn-primary {
     background: var(--primary);
 
     border: 1px solid var(--primary);
-
-    color: #fff;
-}
-
-
-.btn-primary:hover {
-    background: #ff762b;
-
-    border-color: #ff762b;
 
     color: #fff;
 }
@@ -275,17 +249,7 @@ main {
 .btn-dark-outline {
     background: #111318;
 
-    border: 1px solid #111318;
-
-    color: #fff;
-}
-
-
-.btn-dark-outline:hover {
-    background: #25272c;
-
-    border-color: #25272c;
-
+    border: 1px solid #fff2;
     color: #fff;
 }
 

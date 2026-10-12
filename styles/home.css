@@ -1834,16 +1834,6 @@ display: grid;
     justify-content: center;
 }
 
-/* Update to your dark outline button to ensure it matches the image specifically for this section */
-.responders-header .btn-dark-outline {
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.responders-header .btn-dark-outline:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
-}
 
 /* =========================================================
    GRID & CARDS
@@ -1992,77 +1982,3 @@ display: grid;
 }
 
 
-/* =========================================================
-    Animation Count
-   ========================================================= */
-@property --num {
-  syntax: "<integer>";
-  initial-value: 0;
-  inherits: false;
-}
-
-@keyframes countUp {
-  from { --num: var(--from, 0); }
-  to { --num: var(--to, 100); }
-}
-
-.animation-count {
-  position: relative;
-  /* Hide the static HTML text visually */
-  counter-reset: count var(--num);
-  /* Notice the animation is REMOVED from here */
-}
-
-.animation-count span {
-    visibility: hidden;
-}
-
-/* 
-  The animation ONLY triggers when the JavaScript 
-  adds the 'six8-visible' class on scroll! 
-*/
-.six8-visible.animation-count {
-  animation: countUp 3s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
-}
-
-.animation-count::after {
-  content: counter(count) attr(data-suffix);
-  position: absolute;
-  left: 0;
-  top: 0;
-  /* 
-    Use the color variable you already have, or a specific color, 
-    otherwise it inherits 'transparent' from the parent 
-  */
-  /* color: var(--primary);  */
-}
-
-.animation-count.format-timer::after {
-  /* Hardcodes the minutes/hours, and forces the counter to always be 2 digits (01, 02, etc.) */
-  content: "00:00:" counter(count, decimal-leading-zero);
-}
-
-@keyframes six8-pulse-breathe {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
-  }
-  50% {
-    transform: scale(1.15); /* Slightly expands */
-    box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.6); /* Optional subtle glow */
-  }
-}
-
-@keyframes six8-radar-ripple {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: scale(2.8); /* Size of the expanding shockwave */
-    opacity: 0;           /* Fades out completely */
-  }
-}
