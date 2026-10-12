@@ -12,27 +12,38 @@
 
 .contact-intro h1 {
     color: var(--text-dark);
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
 }
 
 .contact-intro-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
     gap: 0;
-    align-items: end;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.intro-left {
+    flex: 1;
 }
 
-.contact-intro .intro-right {
-    padding: 0 2rem;
+.intro-right {
+        display: flex;
+    flex-direction: column;
+    margin-left: auto;
 }
 
+.intro-right > p:last-child {
+    margin-top: auto;
+}
 /* --- 2. Main Layout Grid --- */
 .contact-layout-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem 6rem;
     padding-top: 4rem;
+}
+.contact-form-col {
+    flex: 1;
+    max-width: 800px;
+    margin-right:auto;
 }
 
 /* --- Form Styling --- */

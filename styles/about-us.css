@@ -4,15 +4,29 @@
 
 /* --- 1. Intro Section --- */
 .about-intro {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 0;
-    align-items: end;
-    padding-bottom: 0;
+
+
 }
 
+.intro-grid {
+    display: flex;
+    gap: 0;
+    flex-direction: row;
+    flex-wrap: wrap;  
+}
+
+.intro-left {
+    flex: 1;
+}
 .intro-right {
-    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    width: min(360px, calc(100vw - 4rem));
+}
+
+.intro-right > p:last-child {
+    margin-top: auto;
 }
 
 .about-orange-line {
@@ -23,24 +37,13 @@
     margin-top: 2rem;
 }
 
-.about-intro p.font-giest-mono.text-muted {
-    margin-top: 2rem;
-    color: var(--text-neutral);
-    font-size: .875rem;
-}
-
-.about-intro .section-subtitle {
-    margin: 0;
-    font-size: 1.2rem;
-    color: var(--text-neutral);
-}
-
 /* --- 2. Blueprints --- */
 .blueprint-section {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 0;
     align-items: stretch;
+    padding-top: 2rem;
 }
 
 
@@ -80,12 +83,10 @@
     margin-bottom: 2.5rem;
 }
 
-.blueprint-images,
-.about-intro .intro-left {
+.blueprint-images {
     padding-left: max((calc((100vw - var(--content-width)) / 3) + 2rem), 2rem);
 }
-.blueprint-images,
-.about-intro .intro-right {
+.blueprint-images {
     padding-right: max((calc((100vw - var(--content-width)) / 3) + 2rem), 2rem);
 }
 
