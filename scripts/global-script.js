@@ -5,31 +5,35 @@ function switchSlide(slideIndex) {
   document.getElementById("slide" + slideIndex).classList.add("active");
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Set up the Intersection Observer
-  const animationObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        // If the element is in view
+// 1. Create the observer globally
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("six8-visible");
-          // Unobserve the element so it only animates once
-          observer.unobserve(entry.target);
+            entry.target.classList.add('six8-visible');
+            
+            // Optional: Stop observing once it has animated in
+            observer.unobserve(entry.target); 
         }
-      });
-    },
-    {
-      root: null,
-      threshold: 0.15,
-      rootMargin: "0px 0px -50px 0px",
-    },
-  );
+    });
+}, { 
+    root: null, 
+    rootMargin: '0px', 
+    threshold: 0.1 
+});
 
-  // Find all elements with the specific six8-animate class
-  const animatedElements = document.querySelectorAll(".six8-animate");
+// 2. Wrap the targeting logic in a function
+function initScrollAnimations() {
+    // Select all elements that have the animate class BUT haven't been animated yet
+    const animatedElements = document.querySelectorAll('.six8-animate:not(.six8-visible)');
+    
+    animatedElements.forEach((el) => {
+        observer.observe(el);
+    });
+}
 
-  // Observe each element
-  animatedElements.forEach((el) => animationObserver.observe(el));
+// 3. Run it once on page load for the hardcoded HTML elements
+document.addEventListener("DOMContentLoaded", () => {
+    initScrollAnimations();
 });
 
 document.addEventListener("DOMContentLoaded", () => {

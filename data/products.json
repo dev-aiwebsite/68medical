@@ -1,0 +1,74 @@
+[
+  {
+    "id": "adv-pressure-bar",
+    "badge": "FEATURED PRODUCT",
+    "category": "HEMORRHAGE CONTROL",
+    "title": "ADVANTAGE PRESSURE BAR.",
+    "excerpt": "A closer look at our purpose-built pressure bar. Explore the design, components and thinking behind the equipment.",
+    "price": "$34.99",
+    "image": "https://68medical.com/wp-content/uploads/2026/01/Advantage-Sketch-scaled.jpeg",
+    "url": "./product-detail.html",
+    "note": "Product guide available",
+    "buttonText": "Add to Cart"
+  },
+  {
+    "id": "hemguard-4in",
+    "badge": "BEST SELLER",
+    "category": "HEMORRHAGE CONTROL",
+    "title": "HEMGUARD® 4\"",
+    "excerpt": "The targeted pressure bandage. Get to know the product and the purpose behind its design for rapid field deployment.",
+    "price": "$12.50",
+    "image": "https://res.cloudinary.com/dh7iwoafo/image/upload/q_auto,f_auto,w_1000/v1789860580/cadf582a502bc762cf6303932f9d6dc264712057_hdwmcu.png",
+    "url": "./product-detail.html",
+    "note": "Product overview available",
+    "buttonText": "Add to Cart"
+  },
+  {
+    "id": "procric-kit",
+    "badge": "EXPLORE THE RANGE",
+    "category": "AIRWAY & RESPIRATION",
+    "title": "PROCRIC SURGICAL KIT.",
+    "excerpt": "Explore our airway product range and the equipment designed to support emergency airway and respiration needs.",
+    "price": "$145.00",
+    "image": "https://68medical.com/wp-content/uploads/2026/02/ProCric.jpg",
+    "url": "/product-category/airway",
+    "note": "Equipment videos in Resources",
+    "buttonText": "View collection"
+  },
+  {
+    "id": "russell-chest-seal",
+    "badge": "FIELD TESTED",
+    "category": "RESPIRATION",
+    "title": "RUSSELL CHEST SEAL.",
+    "excerpt": "A hydrogel-based dressing with an integrated low-profile valve designed to cover penetrating chest wounds.",
+    "price": "$22.00",
+    "image": "https://68medical.com/wp-content/uploads/2023/03/Russell-Chest-Seal.jpeg",
+    "url": "./product-detail.html",
+    "note": "Clinical data available",
+    "buttonText": "Add to Cart"
+  },
+  {
+    "id": "tak-710-kit",
+    "badge": "NEW ARRIVAL",
+    "category": "KITS & SETS",
+    "title": "TAK-710 TRAUMA KIT.",
+    "excerpt": "A comprehensive, rapid-deployment kit containing essential hemorrhage and airway management tools.",
+    "price": "$210.00",
+    "image": "https://68medical.com/wp-content/uploads/2026/04/TAK-710-Photo-2.jpg",
+    "url": "./product-detail.html",
+    "note": "Bulk fleet pricing available",
+    "buttonText": "Add to Cart"
+  },
+  {
+    "id": "hemovault",
+    "badge": "TEMPERATURE CONTROL",
+    "category": "CIRCULATION",
+    "title": "HEMOVAULT TRANSPORT.",
+    "excerpt": "Advanced thermal protection for whole blood transport in rugged and austere environments.",
+    "price": "$395.00",
+    "image": "https://68medical.com/wp-content/uploads/2026/03/Hemovault-Blood-Transpor-Boxes-700x700.png",
+    "url": "./product-detail.html",
+    "note": "Specs in Resources",
+    "buttonText": "View details"
+  }
+]

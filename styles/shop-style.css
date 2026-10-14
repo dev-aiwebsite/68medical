@@ -1,0 +1,350 @@
+/* =========================================================
+   PRODUCTS PAGE CSS
+   ========================================================= */
+.products-intro {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+.intro-grid {
+    display: flex;
+    gap: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.intro-left {
+    flex: 1;
+}
+.intro-right > p:last-child {
+    margin-top: auto;
+}
+
+.intro-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    width: min(360px, calc(100vw - 4rem));
+}
+
+
+.press-divider {
+    border: none;
+    border-top: 1px solid var(--border-light);
+    margin: 2.5rem 0;
+}
+
+/* --- 2. Controls & Filters --- */
+.press-controls {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 0 1rem;
+    height: 48px;
+    flex: 1;
+}
+
+.search-icon {
+    color: var(--text-muted);
+    margin-right: 0.75rem;
+}
+
+.search-wrapper input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    outline: none;
+}
+
+.search-wrapper input::placeholder {
+    color: #a0a0a0;
+}
+
+.search-shortcut {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: #a0a0a0;
+    background: #ebebeb;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.filter-wrapper select {
+    height: 48px;
+    padding: 0 3rem 0 1.25rem;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background-color: white;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 14px;
+    outline: none;
+}
+
+
+.tags-list {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tag-btn {
+    background: transparent;
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tag-btn:hover {
+    border-color: var(--text-dark);
+}
+
+.tag-btn.active {
+    background: var(--bg-dark);
+    color: white;
+    border-color: var(--bg-dark);
+}
+
+.tags-meta {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+
+
+/* --- 1. Controls & Filters --- */
+/* The layout requires the search bar to take up most of the space[cite: 5] */
+.products-controls {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.products-categories {
+    margin-bottom: 4rem;
+}
+
+/* --- 2. Product Grid & Cards --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem 4rem;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Matches the slightly taller rectangular aspect ratio[cite: 5] */
+    border-radius: var(--rounded);
+    overflow: hidden;
+    position: relative;
+    background: #f4f4f4;
+    margin-bottom: 1.5rem;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+/* Badge styling[cite: 5] */
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #ffffff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.badge-dot {
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Product Typography[cite: 5] */
+.product-meta {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.product-excerpt {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Pushes action row to the bottom naturally */
+}
+
+/* Action Row[cite: 5] */
+.product-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.5rem;
+}
+
+/* A specific button style for products (White background, thin dark border)[cite: 5] */
+.btn-outline-dark-border {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    background: transparent;
+    color: var(--text-dark);
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+}
+
+.btn-outline-dark-border:hover {
+    border-color: var(--text-dark);
+    background: var(--bg-dark);
+    color: white;
+}
+
+.action-note {
+    font-size: 0.65rem;
+}
+
+/* --- 3. Footer Meta & Bottom Section --- */
+.products-footer-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    padding-bottom: 4rem;
+}
+
+.ask-team-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.ask-team-link:hover {
+    color: var(--primary);
+}
+
+/* .help-grid and .help-col are already in your contact-us.css, but adding the link style here */
+.products-help-section {
+    border-top: 1px solid var(--border-light);
+    padding: 4rem 0;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.help-col h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.help-col p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+.help-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: all 0.2s ease;
+}
+
+.help-link:hover {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+/* --- 4. Responsive Layout --- */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-controls {
+        grid-template-columns: 1fr;
+    }
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    .products-footer-meta {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+}
