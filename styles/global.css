@@ -209,6 +209,10 @@ main {
 }
 
 
+.arrow-icon {
+    font-family: system-ui, monospace;
+}
+
 
 /* --- Global Containers --- */
 .container {

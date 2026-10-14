@@ -147,7 +147,7 @@
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem 2rem;
+    gap: 6rem 4rem;
 }
 
 .article-card {
@@ -169,12 +169,13 @@
     overflow: hidden;
     margin-bottom: 1.25rem;
     background: #f4f4f4;
+    border: 1px solid var(--border-light);
 }
 
 .article-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
@@ -210,6 +211,7 @@
     font-size: 1rem;
     font-weight: 400;
     transition: transform 0.2s ease;
+    font-family: system-ui, monospace;
 }
 
 .article-card:hover .arrow-icon {
